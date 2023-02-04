@@ -8,6 +8,7 @@ possibleChoices.forEach(possibleChoices => possibleChoice.addEventListener('clic
     userChoice = e.target.id
     userChoiceDisplay.innerHTML = userChoice
     generateComputerChoice()
+    getResult()
 }))
 
 function generateComputerChoice() {
