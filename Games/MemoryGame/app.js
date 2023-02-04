@@ -73,11 +73,14 @@ createboard()
 
 function checkMatch() {
     const cards = document.querySelectorAll('img')
-
+    console.log(cards)
     console.log('check for match!')
-   if (cardsChosen[0] == cardsChosen[1]) {
-        alert('You found a match!')
-        cards[cardsChosenIds[0]].setAttribute('src', 'images/pokeball.png')
+    if (cardsChosen[0] == cardsChosen[1]) {
+            alert('You found a match!')
+            cards[cardsChosenIds[0]].setAttribute('src', 'images/pokeball.png')
+            cards[cardsChosenIds[1]].setAttribute('src', 'images/pokeball.png')
+            cards[cardsChosenIds[0]].removeEventListener('click', flipCard)
+            cards[cardsChosenIds[1]].removeEventListener('click', flipCard)
    } 
 }
 
