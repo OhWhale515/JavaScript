@@ -17,10 +17,10 @@ function generateComputerChoice() {
     if (randomNumber === 1) {
         computerChoice = 'rock'
     }
-    if (randomNumber === 1) {
+    if (randomNumber === 2) {
         computerChoice = 'paper'
     }
-    if (randomNumber === 1) {
+    if (randomNumber === 3) {
         computerChoice = 'scissors'
     }
     computerChoiceDisplay.innerHTML = computerChoice
