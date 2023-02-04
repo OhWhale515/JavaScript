@@ -56,6 +56,9 @@ const cardArray = [
 cardArray.sort(() => 0.5 - Math.random())
 
 const gridDisplay = document.querySelector('#grid')
+const cardChosen = []
+const cardsChosenIds = [] 
+
 
 function createboard () {
     for (let i = 0; i < 10; i++) {
@@ -69,13 +72,20 @@ function createboard () {
 createboard() 
 
 function checkMatch() {
+    const cards = document.querySelectorAll('img')
+
     console.log('check for match!')
+   if (cardsChosen[0] == cardsChosen[1]) {
+        alert('You found a match!')
+        cards[cardsChosenIds[0]].setAttribute('src', 'images/pokeball.png')
+   } 
 }
 
 function flipCard() {
     const cardId = this.getAttribute('data-id')
     console.log(cardArray)
     cardsChosen.push(cardArray[cardId].name)
+    cardsChosenIds.push(cardId)
     this.setAttribute('src', cardArray[cardId].img)
     if (cardsChosen.length === 2) {
        setTimeout( checkMatch, 500) 
