@@ -1,32 +1,8 @@
 const cardArray = [
-    {
-        name: 'DevOps-Logo',
-        img: 'images/DevOps.png',
-    },
-    {
-        name: 'Sandshrew',
-        img: 'images/sandshrew.png',
-    },
-    {
-        name: 'Psyduck',
-        img: 'images/Psyduck.png',
-    },
-    {
-        name: 'Welcome',
-        img: 'images/pikachu.png',
-    },
-    {
-        name: 'Gasly',
-        img: 'images/gasly.png',
-    },
-    {
-        name: 'Welcome',
-        img: 'images/gameboy.png',
-    },
-    {
-        name: 'Pokeball',
-        img: 'images/pokeball.png',
-    },
+    // {
+    //     name: 'DevOps-Logo',
+    //     img: 'images/DevOps.png',
+    // },
     {
         name: 'Sandshrew',
         img: 'images/sandshrew.png',
@@ -43,27 +19,51 @@ const cardArray = [
         name: 'Gasly',
         img: 'images/gasly.png',
     },
+    // {
+    //     name: 'Welcome',
+    //     img: 'images/gameboy.png',
+    // },
+    // {
+    //     name: 'Pokeball',
+    //     img: 'images/pokeball.png',
+    // },
     {
-        name: 'Welcome',
-        img: 'images/gameboy.png',
+        name: 'Sandshrew',
+        img: 'images/sandshrew.png',
     },
     {
-        name: 'Pokeball',
-        img: 'images/pokeball.png',
+        name: 'Psyduck',
+        img: 'images/Psyduck.png',
     },
+    {
+        name: 'Pikachu',
+        img: 'images/pikachu.png',
+    },
+    {
+        name: 'Gasly',
+        img: 'images/gasly.png',
+    },
+    // {
+    //     name: 'Welcome',
+    //     img: 'images/gameboy.png',
+    // },
+    // {
+    //     name: 'Pokeball',
+    //     img: 'images/pokeball.png',
+    // },
 ]
 
 cardArray.sort(() => 0.5 - Math.random())
 
 const gridDisplay = document.querySelector('#grid')
-const cardChosen = []
+const cardsChosen = []
 const cardsChosenIds = [] 
-
+const cardsWon = []
 
 function createboard () {
     for (let i = 0; i < 10; i++) {
         const card = document.createElement('img')
-        card.setAttribute('src', 'images/DevOps.png')
+        card.setAttribute('src', 'images/gameboy.png')
         card.setAttribute('data-id', i)
         card.addEventListener('click', flipCard)
         gridDisplay.appendChild(card)
@@ -81,7 +81,11 @@ function checkMatch() {
             cards[cardsChosenIds[1]].setAttribute('src', 'images/pokeball.png')
             cards[cardsChosenIds[0]].removeEventListener('click', flipCard)
             cards[cardsChosenIds[1]].removeEventListener('click', flipCard)
-   } 
+            cardsWon.push(cardsChosen)
+    } 
+    cardsChosen = []
+    cardsChosenIds = []
+
 }
 
 function flipCard() {
@@ -91,6 +95,6 @@ function flipCard() {
     cardsChosenIds.push(cardId)
     this.setAttribute('src', cardArray[cardId].img)
     if (cardsChosen.length === 2) {
-       setTimeout( checkMatch, 500) 
+        setTimeout( checkMatch, 500) 
     }        
 }
