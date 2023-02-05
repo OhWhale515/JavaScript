@@ -1,8 +1,4 @@
 const cardArray = [
-    // {
-    //     name: 'DevOps-Logo',
-    //     img: 'images/DevOps.png',
-    // },
     {
         name: 'Sandshrew',
         img: 'images/sandshrew.png',
@@ -19,14 +15,6 @@ const cardArray = [
         name: 'Gasly',
         img: 'images/gasly.png',
     },
-    // {
-    //     name: 'Welcome',
-    //     img: 'images/gameboy.png',
-    // },
-    // {
-    //     name: 'Pokeball',
-    //     img: 'images/pokeball.png',
-    // },
     {
         name: 'Sandshrew',
         img: 'images/sandshrew.png',
@@ -43,14 +31,6 @@ const cardArray = [
         name: 'Gasly',
         img: 'images/gasly.png',
     },
-    // {
-    //     name: 'Welcome',
-    //     img: 'images/gameboy.png',
-    // },
-    // {
-    //     name: 'Pokeball',
-    //     img: 'images/pokeball.png',
-    // },
 ]
 
 cardArray.sort(() => 0.5 - Math.random())
